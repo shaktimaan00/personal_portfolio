@@ -18,51 +18,8 @@
 
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
-
-  /*.5rem = 8px | 1rem = 16px ...*/
-  --big-font-size: 3.5rem;
-  --h1-font-size: 2.25rem;
-  --h2-font-size: 1.5rem;
-  --h3-font-size: 1.25rem;
-  --normal-font-size: 1rem;
-  --small-font-size: 0.875rem;
-  --smaller-font-size: 0.813rem;
-  --tiny-font-size: 0.625rem;
-
-  /*========== Font weight ==========*/
-  --font-normal: 400;
-  --font-medium: 500;
-  --font-semi-bold: 600;
-
-  /*========== Margenes Bottom ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
-  --mb-0-25: 0.25rem;
-  --mb-0-5: 0.5rem;
-  --mb-0-75: 0.75rem;
-  --mb-1: 1rem;
-  --mb-1-5: 1.5rem;
-  --mb-2: 2rem;
-  --mb-2-5: 2.5rem;
-  --mb-3: 3rem;
-
-  /*========== z index ==========*/
-  --z-tooltip: 10;
-  --z-fixed: 100;
-  --z-modal: 1000;
 }
 
-/* Responsive typography */
-@media screen and (max-width: 992px) {
-  :root {
-    --big-font-size: 2.75rem;
-    --h1-font-size: 1.5rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1rem;
-    --normal-font-size: 0.938rem;
-    --small-font-size: 0.813rem;
-    --smaller-font-size: 0.75rem;
-  }
-}
 
 /*=============== BASE ===============*/
 * {
@@ -85,8 +42,23 @@ textarea {
 }
 
 body {
-  /* background-color: var(--body-color); */
+  background-color: var(--body-color);
+  padding: 0 10rem;
   color: var(--text-color);
+}
+
+body::-webkit-scrollbar {
+  width: 8px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--body-color);       /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #aaa;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  /* border-right: 3px solid transparent;  creates padding around scroll thumb */
 }
 
 h1,
@@ -111,8 +83,9 @@ button {
 }
 
 .main-container {
-  padding: 0 10rem;
+  
   background: hsl(0, 0%, 98%);
+  /* background: red;*/
 }
 
 
@@ -132,7 +105,9 @@ button {
 	font-size: var(--font-normal);
 	color: var(--logo-color);
   background: hsl(0, 0%, 98%);
-  z-index: 1000;
+  z-index: 10;
+  box-shadow: 0px 0px 10px #ddd;
+  /* filter: blur(8px); */
 }
 
 .header .logo{
@@ -196,6 +171,29 @@ button {
   padding: 10rem 3rem 7rem 6rem;
   text-align: left;
   /* background: yellow; */
+}
+/* 
+.info .hand{
+  animation: wiggle 0.5s ease-in-out;
+} */
+
+@keyframes wiggle {
+  0%{
+    transform: rotate(10deg);
+  }
+  25%{
+    transform: rotate(-10deg);
+  }
+  50%{
+    transform: rotate(10deg);
+  }
+  75%{
+    transform: rotate(-10deg);
+  }
+  100%{
+    transform: rotate(10deg);
+  }
+  
 }
 
 .info .name{
@@ -322,6 +320,7 @@ button {
   align-items: center;
   background: #fff;
   box-shadow: 1px 1px 25px rgba(0,0,0,0.1);
+  cursor: pointer;
 }
 
 .content .box-container .box p{
@@ -332,6 +331,7 @@ button {
 
 .content .box-container .box span{
   font-size: .7rem;
+  color: #757575;
 }
 
 .content .box-container .box img{
@@ -455,7 +455,7 @@ button {
 }
 
 .qualification .education img, .qualification .experience img{
-  width: 12px;
+  width: 24px;
   /* margin-right: 5rem; */
 }
 
@@ -741,6 +741,14 @@ button {
   background: blue;
 }
 
+a{
+  color: #757575;
+}
+
+a:hover{
+  color: #111;
+}
+
 
 /* ============================BLOGS=========================== */
 
@@ -919,121 +927,62 @@ button {
 
 
 
+/* =============================media queries ======================== */
 
-
-
-
-
-
-
-
-
-
-
-
-/* ===========================project caraousel======================= */
-
-
-/*=============== REUSABLE CSS CLASSES ===============*/
-/* .section {
-  padding: 6rem 0 2rem;
-}
-
-.section__title {
-  font-size: var(--h1-font-size);
-  color: var(--title-color);
-}
-
-.section__subtitle {
-  display: block;
-  font-size: var(--small-font-size);
-  margin-bottom: 4rem;
-}
-
-.section__title,
-.section__subtitle {
-  text-align: center;
-} */
-
-/*=============== LAYOUT ===============*/
-/* .container {
-  max-width: 968px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.grid {
-  display: grid;
-  gap: 1.5rem;
-} */
-
-/*=============== BUTTONS ===============*/
-/* .button {
-  display: inline-block;
-  background-color: var(--title-color);
-  color: var(--container-color);
-  padding: 1.25rem 2rem;
-  border-radius: 1rem;
-  font-weight: var(--font-medium);
-}
-
-.button:hover {
-  background-color: var(--title-color-dark);
-}
-
-.button__icon {
-  margin-left: var(--mb-0-5);
-}
-
-.button--flex {
-  display: inline-flex;
-  align-items: center;
-} */
-
-/*=============== BREAKPOINTS ===============*/
-/* For large devices */
-/* @media screen and (max-width: 992px) {
-  .container {
-    margin-left: var(--mb-1-5);
-    margin-right: var(--mb-1-5);
+@media screen and (max-width: 1238px) {
+  .main-container{
+    padding: 0 6rem;
   }
 
-  .button {
-    padding: 1rem 1.75rem;
-  }
 
-  .button__icon {
-    width: 22px;
-    height: 22px;
-  }
-} */
-
-/* For medium devices */
-/* @media screen and (max-width: 768px) {
-  body {
-    margin: 0 0 var(--header-height) 0;
-  }
-
-  .section {
-    padding: 2rem 0 4rem;
-  }
-
-  .section__subtitle {
-    margin-bottom: var(--mb-3);
+  .main-container{
+    width: 100vw;
   }
 }
 
-@media screen and (max-width: 576px) {
-} */
-
-/* For small devices */
-/* @media screen and (max-width: 350px) {
-  :root {
-    --big-font-size: 2.25rem;
+@media screen and (max-width: 992px) {
+  .main-container, body{
+    padding: 0 3rem;
   }
 
-  .container {
-    margin-left: var(--mb-1);
-    margin-right: var(--mb-1);
+  .info{
+    padding: 10rem 2rem 0rem 5rem;
   }
-} */
+
+  .my-img{
+    width: 250px;
+  }
+
+  .home{
+    height: 100%;
+  }
+
+  .about .content{
+    gap: 4rem;
+  }
+
+  .content .box-container .box{
+    width: 7rem;
+  }
+
+  .content .about-info {
+    padding: 1.5rem 3.255rem 1.5rem 0;
+  }
+
+  .about{
+    height: 100%;
+  }
+
+  .projects {
+    height: 100%;
+    margin-top: 5rem;
+  }
+
+  .footer {
+    margin-top: 5.5rem;
+  }
+}
+
+@media screen and (max-width:768px) {
+  
+}

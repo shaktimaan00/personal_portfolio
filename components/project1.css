@@ -1,0 +1,358 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --hue: 0;
+  --sat: 0%;
+  --title-color: hsl(var(--hue), var(--sat), 20%);
+  --title-color-dark: hsl(var(--hue), var(--sat), 0%);
+  --text-color: hsl(var(--hue), var(--sat), 46%);
+  --body-color: hsl(var(--hue), var(--sat), 98%);
+  --container-color: #fff;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --big-font-size: 3.5rem;
+  --h1-font-size: 2.25rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+  --tiny-font-size: 0.625rem;
+
+  /*========== Font weight ==========*/
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margenes Bottom ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/* Responsive typography */
+@media screen and (max-width: 992px) {
+  :root {
+    --big-font-size: 2.75rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea {
+  /* font-family: var(--body-font); */
+  font-family: 'Lexend', sans-serif;
+  font-size: var(--normal-font-size);
+}
+
+body {
+  /* background-color: var(--body-color); */
+  color: var(--text-color);
+}
+
+body::-webkit-scrollbar {
+  width: 8px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--body-color);       /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #aaa;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  /* border-right: 3px solid transparent;  creates padding around scroll thumb */
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.main-container {
+  padding: 0 10rem;
+  background: hsl(0, 0%, 98%);
+}
+
+
+/* =====================HEADER============================= */
+
+.header{
+  /* position: absolute; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 10rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 3.5rem;
+	font-size: var(--font-normal);
+	color: var(--logo-color);
+  background: hsl(0, 0%, 98%);
+  z-index: 10;
+  box-shadow: 0px 0px 10px #ddd;
+  /* filter: blur(8px); */
+}
+
+.header .logo{
+	font-size: 1.5rem;
+}
+
+.header .logo span{
+	color: #000;
+}
+
+.header .nav-items a{
+	font-size: .9rem;
+	color: #757575;
+	margin-left: 0.7rem;
+}
+
+.header .nav-items a:hover{
+	color: #000;
+}
+
+/* ============================main body ==================================== */
+
+.main-body{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background: hsl(0, 0%, 98%);
+    height: 100vh;
+}
+
+.heading .h1-heading{
+  font-size: 2.5rem;
+  padding-bottom: 0.3rem;
+  color: #555;
+}
+
+.heading{
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content{
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.content .left{
+    width: 40%;
+    /* height: 100px; */
+    /* background: red; */
+}
+
+.content .right{
+    width: 60%;
+    height: 100px;
+    /* background: red; */
+}
+
+.content .svg-icon{
+    width: 30px;
+}
+
+.content .left .image{
+    width: 18rem;
+    padding: 0.7rem;
+    background: #fff;
+    border-radius: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.content .left .image img{
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.content .left .tech-list{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.content .left .tech-list p{
+    color: #111;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.content .left .tech-list > div{
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.content .left .tech-list > div img{
+    width: 45px;
+    /* mix-blend-mode: hard-light; */
+}
+
+.content .left .src-code{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content .left .src-code p{
+    color: #111;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.content .left .src-code li{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.content .left .src-code li img{
+    width: 55px;
+}
+
+.content .right .h2-heading{
+    font-size: 1.5rem;
+    margin-top: 0rem;
+    margin-bottom: 0.4rem;
+    color: #555;
+}
+
+.content .right .info p{
+    padding: 0.4rem 0;
+}
+
+.content .right .info span{
+    /* padding: 0.4rem 0; */
+    font-weight: 400;
+    color: #111;
+}
+
+.content .right .info li{
+    padding: 0.1rem 0;
+}
+
+.content .demo{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.content .demo .demo-btn{
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 0.7rem;
+    border-radius: 0.6rem;
+    gap: 0.5rem;
+    color: #fff;
+    background: #353535;
+    margin-bottom: 0.5rem;
+}
+
+.content .demo .demo-btn img{
+    width: 20px;
+}
+    
+.content .demo .demo-btn:hover img{
+    animation: wiggle 0.5s infinite;
+}
+
+@keyframes wiggle{
+    0%, 25%{
+        transform: translate(2px,-2px);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

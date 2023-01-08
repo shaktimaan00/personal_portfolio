@@ -38,6 +38,24 @@ pdot2.addEventListener("click", () => {
   box1.style.display = "none";
 });
 
+let sayHello = document.querySelector(".hello");
+let hand = document.querySelector(".hand");
 
+sayHello.addEventListener("click",() => {
+  hand.style.animation = "wiggle 0.5s ease-in-out";
+  // hand.style.width = "80px";
+  setTimeout(() => {
+    hand.style.animation = "none";
+    // hand.style.width = "45px";
+  }, 600)
+})
+
+let ai_box = document.getElementById("ai-box");
+let detail1 = document.querySelector(".detail1");
+
+ai_box.addEventListener("click", ()=>{
+  console.log("yes");
+  detail1.classList.toggle("show-pop-up");
+})
 
 
